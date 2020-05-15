@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
 """
-Implementation of the straight skeleton algorithm as described by Felkel and Obdržálek in their 1998 conference paper Straight skeleton implementation.
+Implementation of the straight skeleton algorithm as described by
+Felkel and Obdržálek in their 1998 conference paper
+Straight skeleton implementation.
 """
 
 import logging
@@ -213,6 +215,7 @@ class _LAVertex:
 class _SLAV:
 	def __init__(self, polygon, holes):
 		contours = [_normalize_contour(polygon)]
+
 		contours.extend([_normalize_contour(hole) for hole in holes])
 
 		self._lavs = [_LAV.from_polygon(contour, self) for contour in contours]
@@ -468,7 +471,7 @@ def _merge_sources(skeleton):
 		skeleton.pop(i)
 
 			
-def skeletonize(polygon, holes=None):
+def skeletonize(polygon, holes=[]):
 	"""
 	Compute the straight skeleton of a polygon.
 

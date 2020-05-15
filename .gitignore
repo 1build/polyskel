@@ -1,2 +1,9 @@
 *.py[cod]
 .idea
+.vscode/
+dist/
+build/
+
+*.egg-info
+*.whl
+*.wheel
